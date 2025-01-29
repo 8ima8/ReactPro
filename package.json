@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/8ima8/ReactPro/issues"
   },
-  "homepage": "https://github.com/8ima8/ReactPro#readme"
+  "homepage": "https://github.com/8ima8/ReactPro#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig":{
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
 }
