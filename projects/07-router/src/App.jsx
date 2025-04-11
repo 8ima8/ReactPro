@@ -1,36 +1,36 @@
-import { useEffect, useState } from 'react'
 import './App.css'
 import React from 'react'
-import { EVENTS } from './consts'
 import  HomePage  from './pages/Home'
 import AboutPage from './pages/About'
+import { Router } from './Router'
+import { Page404 } from './pages/404'
+import { SearchPage } from './pages/Search'
+
+const routes = [
+  {
+    path: '/',
+    Component: HomePage
+  },
+  {
+    path: '/about',
+    Component: AboutPage
+
+  },
+  {
+    path: '/search/:query', // quiero que busque //search/javascript search/react
+    Component: SearchPage
+
+  }
+]
+
 
 
 function App() {
 
-  const [currentPath, SetCurrentPath] = useState(window.location.pathname)
-
-  useEffect(()=>{
-    const onLocationChange = () =>{
-      SetCurrentPath(window.location.pathname)
-    }
-
-    window.addEventListener(EVENTS.PUSHSTATE, onLocationChange)
-    window.addEventListener(EVENTS.POPSTATE,onLocationChange)
-
-    return() =>{
-      window.removeEventListener(EVENTS.PUSHSTATE, onLocationChange)
-      window.removeEventListener(EVENTS.POPSTATE, onLocationChange)
-    }
-
-  },[])
-
 
   return (
     <main>
-      <h1>ima router</h1>
-      <HomePage/>
-      <AboutPage/>
+      <Router routes={routes} defaultComponent={Page404}/>
     </main>
   )
 }

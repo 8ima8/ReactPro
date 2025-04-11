@@ -1,6 +1,6 @@
 import React from "react";
 //import {navi}
-import {navigate} from '../Link.jsx'
+import {Link, navigate} from '../Link.jsx'
 
 export default function AboutPage(){
     return(
@@ -10,7 +10,7 @@ export default function AboutPage(){
             <img src='https://pbs.twimg.com/profile_images/1359373716422070272/yTpvRQrg_400x400.jpg' alt='Fabians picture'/>
             <p> Hi, I am Fabian an i am creating a react router clon</p>
             </div>
-            <a href='/'>Ir a Home</a>
+            <Link to='/'>Ir a Home</Link>
         </div>
     )
 }
