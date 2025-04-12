@@ -17,6 +17,11 @@ const routes = [
     path: '/search/:query', // quiero que busque //search/javascript search/react
     Component: SearchPage
 
+  },
+  {
+    path: '/:lang/about', // quiero que busque //search/javascript search/react
+    Component: LazyAboutPage
+
   }
 ]
 

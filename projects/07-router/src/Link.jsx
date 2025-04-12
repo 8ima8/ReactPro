@@ -1,4 +1,4 @@
-import { BUTTON, EVENTS } from './consts'
+import { BUTTON, EVENTS } from './utils/consts'
 import React from 'react'
 
 
